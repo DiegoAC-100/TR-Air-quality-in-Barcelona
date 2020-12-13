@@ -1,0 +1,1759 @@
++*In[1]:*+
+[source, ipython3]
+----
+import pandas as pd
+#Lectura de la base de datos desde el archivo original *.csv
+#Muestra los nombres de las variables en las columnas y los datos de los primeros 5 renglones
+dataset1 = "C:/Users/ARMANDO/Documents/DAC/TR/D_1/2019_05_Maig_qualitat_aire_BCN.csv"
+df=pd.read_csv(dataset1, header = 0)
+df.head()
+
+df.dtypes
+
+df.isna().sum()
+
+df2_contamina_1=df.loc[df['CODI_CONTAMINANT']==10]
+df2_contamina_1.head()
+
+a1=df2_contamina_1.H01.max()
+a2=df2_contamina_1.H02.max()
+a3=df2_contamina_1.H03.max()
+a4=df2_contamina_1.H04.max()
+a5=df2_contamina_1.H05.max()
+a6=df2_contamina_1.H06.max()
+a7=df2_contamina_1.H07.max()
+a8=df2_contamina_1.H08.max()
+a9=df2_contamina_1.H09.max()
+a10=df2_contamina_1.H10.max()
+a11=df2_contamina_1.H11.max()
+a12=df2_contamina_1.H12.max()
+a13=df2_contamina_1.H13.max()
+a14=df2_contamina_1.H14.max()
+a15=df2_contamina_1.H15.max()
+a16=df2_contamina_1.H16.max()
+a17=df2_contamina_1.H17.max()
+a18=df2_contamina_1.H18.max()
+a19=df2_contamina_1.H19.max()
+a20=df2_contamina_1.H20.max()
+a21=df2_contamina_1.H21.max()
+a22=df2_contamina_1.H22.max()
+a23=df2_contamina_1.H23.max()
+a24=df2_contamina_1.H24.max()
+print('H1',a1,'H2',a2, 'H3',a3,'H4', a4, 'H5',a5, 'H6',a6, 'H7',a7,'H8', a8,'H9', a9, 'H10',a10, 'H11',
+      a11, 'H12',a12, 'H13',a13,'H14', a14, 'H15',a15, 'H16',a16, 'H17',a17, 'H18',a18, 'H19',a19, 
+      'H20',a20, 'H21',a21, 'H22',a22, 'H23',a23, 'H24', a24)
+maxc=max(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+minc=min(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+print('maxc=', maxc,'minc=',minc)
+
+a1=df2_contamina_1.H01.min()
+a2=df2_contamina_1.H02.min()
+a3=df2_contamina_1.H03.min()
+a4=df2_contamina_1.H04.min()
+a5=df2_contamina_1.H05.min()
+a6=df2_contamina_1.H06.min()
+a7=df2_contamina_1.H07.min()
+a8=df2_contamina_1.H08.min()
+a9=df2_contamina_1.H09.min()
+a10=df2_contamina_1.H10.min()
+a11=df2_contamina_1.H11.min()
+a12=df2_contamina_1.H12.min()
+a13=df2_contamina_1.H13.min()
+a14=df2_contamina_1.H14.min()
+a15=df2_contamina_1.H15.min()
+a16=df2_contamina_1.H16.min()
+a17=df2_contamina_1.H17.min()
+a18=df2_contamina_1.H18.min()
+a19=df2_contamina_1.H19.min()
+a20=df2_contamina_1.H20.min()
+a21=df2_contamina_1.H21.min()
+a22=df2_contamina_1.H22.min()
+a23=df2_contamina_1.H23.min()
+a24=df2_contamina_1.H24.min()
+print('H1',a1,'H2',a2, 'H3',a3,'H4', a4, 'H5',a5, 'H6',a6, 'H7',a7,'H8', a8,'H9', a9, 'H10',a10, 'H11',
+      a11, 'H12',a12, 'H13',a13,'H14', a14, 'H15',a15, 'H16',a16, 'H17',a17, 'H18',a18, 'H19',a19, 
+      'H20',a20, 'H21',a21, 'H22',a22, 'H23',a23, 'H24', a24)
+maxc=max(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+minc=min(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+print('maxc=', maxc,'minc=',minc)
+
+df3_est_43_Cont_1=df2_contamina_1.loc[df2_contamina_1['ESTACIO']==4]
+df3_est_43_Cont_1.head()
+a1=df3_est_43_Cont_1.H01.max()
+a2=df3_est_43_Cont_1.H02.max()
+a3=df3_est_43_Cont_1.H03.max()
+a4=df3_est_43_Cont_1.H04.max()
+a5=df3_est_43_Cont_1.H05.max()
+a6=df3_est_43_Cont_1.H06.max()
+a7=df3_est_43_Cont_1.H07.max()
+a8=df3_est_43_Cont_1.H08.max()
+a9=df3_est_43_Cont_1.H09.max()
+a10=df3_est_43_Cont_1.H10.max()
+a11=df3_est_43_Cont_1.H11.max()
+a12=df3_est_43_Cont_1.H12.max()
+a13=df3_est_43_Cont_1.H13.max()
+a14=df3_est_43_Cont_1.H14.max()
+a15=df3_est_43_Cont_1.H15.max()
+a16=df3_est_43_Cont_1.H16.max()
+a17=df3_est_43_Cont_1.H17.max()
+a18=df3_est_43_Cont_1.H18.max()
+a19=df3_est_43_Cont_1.H19.max()
+a20=df3_est_43_Cont_1.H20.max()
+a21=df3_est_43_Cont_1.H21.max()
+a22=df3_est_43_Cont_1.H22.max()
+a23=df3_est_43_Cont_1.H23.max()
+a24=df3_est_43_Cont_1.H24.max()
+print('H1',a1,'H2',a2, 'H3',a3,'H4', a4, 'H5',a5, 'H6',a6, 'H7',a7,'H8', a8,'H9', a9, 'H10',a10, 'H11',
+      a11, 'H12',a12, 'H13',a13,'H14', a14, 'H15',a15, 'H16',a16, 'H17',a17, 'H18',a18, 'H19',a19, 
+      'H20',a20, 'H21',a21, 'H22',a22, 'H23',a23, 'H24', a24)
+maxc=max(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+minc=min(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+print('maxc=', maxc,'minc=',minc)
+
+a1=df3_est_43_Cont_1.H01.min()
+a2=df3_est_43_Cont_1.H02.min()
+a3=df3_est_43_Cont_1.H03.min()
+a4=df3_est_43_Cont_1.H04.min()
+a5=df3_est_43_Cont_1.H05.min()
+a6=df3_est_43_Cont_1.H06.min()
+a7=df3_est_43_Cont_1.H07.min()
+a8=df3_est_43_Cont_1.H08.min()
+a9=df3_est_43_Cont_1.H09.min()
+a10=df3_est_43_Cont_1.H10.min()
+a11=df3_est_43_Cont_1.H11.min()
+a12=df3_est_43_Cont_1.H12.min()
+a13=df3_est_43_Cont_1.H13.min()
+a14=df3_est_43_Cont_1.H14.min()
+a15=df3_est_43_Cont_1.H15.min()
+a16=df3_est_43_Cont_1.H16.min()
+a17=df3_est_43_Cont_1.H17.min()
+a18=df3_est_43_Cont_1.H18.min()
+a19=df3_est_43_Cont_1.H19.min()
+a20=df3_est_43_Cont_1.H20.min()
+a21=df3_est_43_Cont_1.H21.min()
+a22=df3_est_43_Cont_1.H22.min()
+a23=df3_est_43_Cont_1.H23.min()
+a24=df3_est_43_Cont_1.H24.min()
+print('H1',a1,'H2',a2, 'H3',a3,'H4', a4, 'H5',a5, 'H6',a6, 'H7',a7,'H8', a8,'H9', a9, 'H10',a10, 'H11',
+      a11, 'H12',a12, 'H13',a13,'H14', a14, 'H15',a15, 'H16',a16, 'H17',a17, 'H18',a18, 'H19',a19, 
+      'H20',a20, 'H21',a21, 'H22',a22, 'H23',a23, 'H24', a24)
+maxc=max(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+minc=min(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+print('maxc=', maxc,'minc=',minc)
+#Contar en cuantos días del mes hay registros del contaminante
+ndias=df3_est_43_Cont_1.DIA.count()
+print("Número de dias con datos=",ndias)
+
+df3_est_43_Cont_1.isna().sum()
+
+dia_ok=2
+df4_est_43_Cont_1_dia_2=df3_est_43_Cont_1.loc[df3_est_43_Cont_1['DIA']==dia_ok]
+df4_est_43_Cont_1_dia_2.head()
+
+import matplotlib.pyplot as plt
+import numpy as np 
+import math
+estaciones=[4,43,44,54,57]
+#estaciones=[4,42,43,44,50,54,57]
+
+el_maximo_de_cada_estacion=[]
+
+for r3 in range(0,5):
+    Estacion_ok=estaciones[r3]
+    print("Estacion ok",Estacion_ok)
+    #Selecciona los datos de la estación 43
+    df3_est_43_Cont_1=df2_contamina_1.loc[df2_contamina_1['ESTACIO']==Estacion_ok]
+    df3_est_43_Cont_1.head()
+    #Selecciona los datos de la estación 43
+    #df3_est_43_Cont_1=df2_contamina_1.loc[df2_contamina_1['ESTACIO']==43]
+    #df3_est_43_Cont_1.head()
+    #Con la linea siguiente se declara el nombre de un arreglo o lista de datos
+    mean_diarios_validos=[] 
+    #La variable siguiente es para contar los dias en los que hubo datos válidos (datos iguales o mayores al 75%)
+    dia_con_datos_validos=0
+    #El arreglo o vector siguiente es para identificar qué dias del mes hubo datos válidos
+    dias_del_mes_con_datos_validos=[]
+
+    #Para que revise los 30 dias posibles
+    #Para mes con 30 dias range(1,31) y para mes con 31 dias range(1,32)
+    #NOTA IMPORTANTE: EL RANGO DEBE AJUSTARSE SEGUN EL MES QUE SE LEA.
+    dias=[2,3,4,5,6,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+    for y in range(1,27):
+
+        dia_ok=dias[y]
+        print("dia_ok",dia_ok)
+        df4_est_43_Cont_1_dia_2=df3_est_43_Cont_1.loc[df3_est_43_Cont_1['DIA']==dia_ok]
+        df4_est_43_Cont_1_dia_2.head()
+
+        h01=df4_est_43_Cont_1_dia_2.H01
+        h01=float(h01)
+        h02=df4_est_43_Cont_1_dia_2.H02
+        h02=float(h02)
+        h03=df4_est_43_Cont_1_dia_2.H03
+        h03=float(h03)
+        h04=df4_est_43_Cont_1_dia_2.H04
+        h04=float(h04)
+        h05=df4_est_43_Cont_1_dia_2.H05
+        h05=float(h05)
+        h06=df4_est_43_Cont_1_dia_2.H06
+        h06=float(h06)
+        h07=df4_est_43_Cont_1_dia_2.H07
+        h07=float(h07)
+        h08=df4_est_43_Cont_1_dia_2.H08
+        h08=float(h08)
+        h09=df4_est_43_Cont_1_dia_2.H09
+        h09=float(h09)
+        h10=df4_est_43_Cont_1_dia_2.H10
+        h10=float(h10)
+        h11=df4_est_43_Cont_1_dia_2.H11
+        h11=float(h11)
+        h12=df4_est_43_Cont_1_dia_2.H12
+        h12=float(h12)
+        h13=df4_est_43_Cont_1_dia_2.H13
+        h13=float(h13)
+        h14=df4_est_43_Cont_1_dia_2.H14
+        h14=float(h14)
+        h15=df4_est_43_Cont_1_dia_2.H15
+        h15=float(h15)
+        h16=df4_est_43_Cont_1_dia_2.H16
+        h16=float(h16)
+        h17=df4_est_43_Cont_1_dia_2.H17
+        h17=float(h17)
+        h18=df4_est_43_Cont_1_dia_2.H18
+        h18=float(h18)
+        h19=df4_est_43_Cont_1_dia_2.H19
+        h19=float(h19)
+        h20=df4_est_43_Cont_1_dia_2.H20
+        h20=float(h20)
+        h21=df4_est_43_Cont_1_dia_2.H21
+        h21=float(h21)
+        h22=df4_est_43_Cont_1_dia_2.H22
+        h22=float(h22)
+        h23=df4_est_43_Cont_1_dia_2.H23
+        h23=float(h23)
+        h24=df4_est_43_Cont_1_dia_2.H24
+        h24=float(h24)
+        #print(h01,h02,h03,h04,h05,h06,h07,h08,h09,h10,h11,h12,h13,h14,h15,h16,h17,h18,h19,h20,h21,h22,h23)
+
+        #print(h01,h02)
+
+        #y=[h01,h02]
+
+        y=[h01,h02,h03,h04,h05,h06,h07,h08,h09,h10,h11,h12,h13,h14,h15,h16,h17,h18,h19,h20,h21,h22,h23,h24]
+        print("y=",y)
+        print("h[1]=",y[0],"h[2]=",y[1], "h[3]=",y[2], "h[4]=",y[3], "h[5]=",y[4], "h[6]=",y[5], "h[7]=",y[6], "h[8]=",y[7])
+        print("h[9]=",y[8], "h[10]=",y[9], "h[11]=",y[10],"h[12]=",y[11],"h[13]=",y[12],"h[14]=",y[13],"h[15]=",y[14],"h[16]=",y[15])
+        print("h[17]=",y[16], "h[18]=",y[17], "h[19]=",y[18],"h[20]=",y[19],"h[21]=",y[20],"h[22]=",y[21],"h[23]=",y[22],"h[24]=",y[23])
+
+        
+        #Calcular los valores maximos
+        a1=df3_est_43_Cont_1.H01.max()
+        a2=df3_est_43_Cont_1.H02.max()
+        a3=df3_est_43_Cont_1.H03.max()
+        a4=df3_est_43_Cont_1.H04.max()
+        a5=df3_est_43_Cont_1.H05.max()
+        a6=df3_est_43_Cont_1.H06.max()
+        a7=df3_est_43_Cont_1.H07.max()
+        a8=df3_est_43_Cont_1.H08.max()
+        a9=df3_est_43_Cont_1.H09.max()
+        a10=df3_est_43_Cont_1.H10.max()
+        a11=df3_est_43_Cont_1.H11.max()
+        a12=df3_est_43_Cont_1.H12.max()
+        a13=df3_est_43_Cont_1.H13.max()
+        a14=df3_est_43_Cont_1.H14.max()
+        a15=df3_est_43_Cont_1.H15.max()
+        a16=df3_est_43_Cont_1.H16.max()
+        a17=df3_est_43_Cont_1.H17.max()
+        a18=df3_est_43_Cont_1.H18.max()
+        a19=df3_est_43_Cont_1.H19.max()
+        a20=df3_est_43_Cont_1.H20.max()
+        a21=df3_est_43_Cont_1.H21.max()
+        a22=df3_est_43_Cont_1.H22.max()
+        a23=df3_est_43_Cont_1.H23.max()
+        a24=df3_est_43_Cont_1.H24.max()
+        print('H1',a1,'H2',a2, 'H3',a3,'H4', a4, 'H5',a5, 'H6',a6, 'H7',a7,'H8', a8,'H9', a9, 'H10',a10, 'H11',
+              a11, 'H12',a12, 'H13',a13,'H14', a14, 'H15',a15, 'H16',a16, 'H17',a17, 'H18',a18, 'H19',a19, 
+              'H20',a20, 'H21',a21, 'H22',a22, 'H23',a23, 'H24', a24)
+        maxc=max(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+        minc=min(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+        print('maxc=', maxc,'minc=',minc)
+        
+        el_maximo_de_cada_estacion.append(maxc)
+        
+                 
+        sumaz=0
+
+        #    >>> import math
+        #>>> x = float('nan')
+        #>>> math.isnan(x)
+        #True
+
+        #Este segmento de código es para identificar celdas sin dato o dato que no es un numero
+        #"Range de 0 a 24 , considera indices desde 0 hasta 23"
+        for r1 in range(0,24):
+
+            #Return True if x is a NaN (not a number), and False otherwise.
+            test1=math.isnan(y[r1])
+            print(test1)
+            #Si el dato es igual a NaN entonces el resultado será True
+            if test1 == True:
+                sumaz=sumaz + 1
+                print("sumaz",sumaz)
+                print("Encontro un nan")
+                print("test1",test1)
+            else:
+            #Si el dato no es igual a Nan entonces el resultado es False
+                sumaz=sumaz
+                print("sumaz",sumaz)
+
+        print("Sumaz", sumaz)
+        if sumaz <= 6:
+        #Si sumaz es menor o igual a 6 quiere decir que las horas sin datos fueron solo 6 o menos y por lo tanto
+        #consideramos que los datos disponible serán 18 o mas y por lo tanto será un día válido
+            #Con la linea de codigo siguiente hago que se incluya en el arreglo llamado dias_del_mes_con_datos_validos
+            #este día considerado como válido
+            dias_del_mes_con_datos_validos.append(dia_ok)
+            #Como es un día valido lo sumo a la cuenta de días válidos
+            dia_con_datos_validos= dia_con_datos_validos+1
+            x=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24']
+            #x=['1','2']
+
+            fig = plt.figure()
+            ax = fig.add_axes([0,0,1,1])
+            #ax = fig
+            ax.set_xlim(-1, 24)
+            ax.set_ylim(0.0, 220)
+            dia_ok2=str(dia_ok)
+            Estacion_ok2=str(Estacion_ok)
+            b2="Dia "
+            dia_letrero= b2 + dia_ok2 + " del mes de maig de 2019 en l'estació" + Estacion_ok2
+            #plt.title('Dia {dia_ok2} del mes de abril de 2020 en la estación 43')
+            plt.title(dia_letrero)
+            #plt.title('Version Catalan {Cantidad} media de PM10 por hora en el mes de abril de 2020 en la estación 43')
+            plt.ylabel('Quantitat de PM10 (µg/m3) ',fontsize=13,weight="bold")
+            plt.xlabel('Hora del dia',fontsize=13, weight="bold")
+            plt.grid(linestyle='dotted')
+            ax.bar(x,y)
+            #plt.plot(x,y)
+            narchivo="C:/Users/ARMANDO/Documents/DAC/TR/grafiques/2019/Maig/PM10/"
+            nombre_archivo=dia_letrero
+            path=narchivo+dia_letrero
+            #La linea de código siguiente es la que se requiere para que los graficos que se envian a aun archivo se generen con 
+            #los datos completos de los ejes, leyendas, etcétera
+            #plt.savefig(path, bbox_inches='tight')
+            #Calculo de la media diaria de los valores de PM10
+            y=[h01,h02,h03,h04,h05,h06,h07,h08,h09,h10,h11,h12,h13,h14,h15,h16,h17,h18,h19,h20,h21,h22,h23,h24]
+            #numpy.mean(df['col_name'])
+            #a=numpy.mean(y)
+            x=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24']
+            #x=['1','2']
+            a = np.array([h01,h02,h03,h04,h05,h06,h07,h08,h09,h10,h11,h12,h13,h14,h15,h16,h17,h18,h19,h20,h21,h22,h23,h24]) 
+            print ('Nuestro array sin corregir es:' )
+            print (a) 
+            print ('\n')  
+            print ('Applying mean() function:') 
+            print (np.mean(a)) 
+            print ('\n')
+
+            #Segmento de código en el que se genera el arreglo que contiene los datos válidos del día, es decir, elimina
+            #los NaN.
+            #ac=ARRAY_CORREGIDO
+            #Se declara el nuevo arreglo ac que arreglo corregido
+            ac=[]
+            for r2 in range(0,24):
+            #"Range de 0 a 24 , considera indices desde 0 hasta 23"
+            #En este for generará los nuevos arreglos con datos horarios válidos por día para estimar la media diaria
+            #Return True if x is a NaN (not a number), and False otherwise.
+                test1=math.isnan(y[r2])
+                print(test1)
+                if test1 == True:
+                    #Si es verdadero no hagas nada
+                    no_hace_nada=22
+                else:
+                #Si es un numero voy agregandolo al arreglo ac
+                    ac.append(y[r2])
+            #Aquí termina el loop definido por "for r2"
+            print ('Nuestro array corregido es:' )
+            print (ac) 
+            print ('\n')  
+
+            print ('Applying mean() function:') 
+            #Calcula la media a partir del arreglo corregido y la imprime
+            print("Dia del mes",dia_ok)
+            print ("Media del arreglo sin Nan",np.mean(ac))
+
+            #Imprimir el numero de días con datos validos
+            print ('dia_con_datos_validos',dia_con_datos_validos) 
+
+            #Calculo de medias corregidas en caso de que existan pocos datos durante el día estudiado
+            #Va formando el array de los means diarios válidos
+            mean_diarios_validos.append(np.mean(ac))
+        else:
+            #Solo genera y manda a un archivo el grafico de barras con el dia con datos incompletos
+            fig = plt.figure()
+            ax = fig.add_axes([0,0,1,1])
+            #ax = fig
+            ax.set_xlim(-1, 24)
+            ax.set_ylim(0.0, 220)
+            dia_ok2=str(dia_ok)
+            b2="Dia "
+            dia_letrero= b2 + dia_ok2 + " del mes de maig de 2019 en l'estació" + Estacion_ok2
+            #plt.title('Dia {dia_ok2} del mes de abril de 2020 en la estación 43')
+            plt.title(dia_letrero)
+            #plt.title('Version Catalan {Cantidad} media de PM10 por hora en el mes de abril de 2020 en la estación 43')
+            plt.ylabel('Quantitat de PM10 (µg/m3) ',fontsize=13,weight="bold")
+            plt.xlabel('Hora del dia',fontsize=13, weight="bold")
+            plt.grid(linestyle='dotted')
+            ax.bar(x,y)
+            #plt.plot(x,y)
+            narchivo="C:/Users/ARMANDO/Documents/DAC/TR/grafiques/2019/Maig/PM10/"
+            nombre_archivo=dia_letrero
+            path=narchivo+dia_letrero
+            #La linea de código siguiente es la que se requiere para que los graficos que se envian a aun archivo se generen con 
+            #los datos completos de los ejes, leyendas, etcétera
+            #plt.savefig(path, bbox_inches='tight')
+            print("No hay suficientes datos para calcular la media")
+
+    #Cálculo de la media mensual
+
+    print("mean_diarios_validos",mean_diarios_validos)
+    print("media mensual",np.mean(mean_diarios_validos))
+    print("Días del mes con datos válidos",dias_del_mes_con_datos_validos)   
+
+    fig = plt.figure()
+    ax = fig.add_axes([0,0,1,1])   
+    ax.set_xlim(0, 31)
+    ax.set_ylim(0.0, 60)
+    ax.bar(dias_del_mes_con_datos_validos,mean_diarios_validos)   
+    #plt.title('Dia {dia_ok2} del mes de abril de 2020 en la estación 43')
+    plt.title(Estacion_ok2)
+    #titulo_media='Estació'+Estacion_ok2
+    plt.ylabel('Mitjana diaria de PM10 (µg/m3) ',fontsize=13,weight="bold")
+    plt.xlabel("Dia del mes de maig de 2019",fontsize=13, weight="bold")  
+    plt.grid(linestyle='dotted')
+
+
+    maximo_de_las_estaciones=max(el_maximo_de_cada_estacion)
+    print("maximo_de_las_estaciones",maximo_de_las_estaciones)
+    print("el_maximo_de_cada_estacion",el_maximo_de_cada_estacion)
+    
+    narchivo="C:/Users/ARMANDO/Documents/DAC/TR/grafiques/2019/Maig/PM10/"
+    nombre_archivo=Estacion_ok2
+    path=narchivo+Estacion_ok2
+    #La linea de código siguiente es la que se requiere para que los graficos que se envian a aun archivo se generen con 
+    #los datos completos de los ejes, leyendas, etcétera
+    #plt.savefig(path, bbox_inches='tight')
+    
+    import matplotlib.pyplot as plt
+import numpy as np 
+import math
+from array import *
+#Contaminante 10, estaciones en 2020 estaciones=[4,43,44,54,57,58]
+#estaciones=[4,43,44,54,57,58]
+#Contaminante 10, estaciones en 2019 [4,43,44,54,57,58]
+estaciones=[4,43,44,54,57]
+#estaciones=[4,42,43,44,50,54,57,58]
+
+el_maximo_de_cada_estacion=[]
+#Arreglo con datos horarios por estacion
+#Nombre arreglo_horarios_estacion 
+A_horario=[]
+A_horario_est_4=[]
+A_horario_est_43=[]
+A_horario_est_44=[]
+A_horario_est_54=[]
+A_horario_est_57=[]
+
+
+for r3 in range(0,5):
+    Estacion_ok=estaciones[r3]
+    print("Estacion ok",Estacion_ok)
+    #Selecciona los datos de la estación 43
+    df3_est_43_Cont_1=df2_contamina_1.loc[df2_contamina_1['ESTACIO']==Estacion_ok]
+    df3_est_43_Cont_1.head()
+    #Selecciona los datos de la estación 43
+    #df3_est_43_Cont_1=df2_contamina_1.loc[df2_contamina_1['ESTACIO']==43]
+    #df3_est_43_Cont_1.head()
+
+
+    #Con la linea siguiente se declara el nombre de un arreglo o lista de datos
+    mean_diarios_validos=[] 
+    #La variable siguiente es para contar los dias en los que hubo datos válidos (datos iguales o mayores al 75%)
+    dia_con_datos_validos=0
+    #El arreglo o vector siguiente es para identificar qué dias del mes hubo datos válidos
+    dias_del_mes_con_datos_validos=[]
+
+    #Para que revise los 30 dias posibles
+    #Para mes con 30 dias range(1,31) y para mes con 31 dias range(1,32)
+    #NOTA IMPORTANTE: EL RANGO DEBE AJUSTARSE SEGUN EL MES QUE SE LEA y LOS DIAS REGISTRADOS.
+    #Maig 2020 range(1,31)
+    #Maig 2019 range(2,31)
+    
+
+    dias=[1,2,3,4,5,6,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+    for y in range(0,28):
+
+        dia_ok=dias[y]
+        print("dia_ok",dia_ok)
+        print("df4_est_43_Cont_1_dia_2",df4_est_43_Cont_1_dia_2)
+        df4_est_43_Cont_1_dia_2=df3_est_43_Cont_1.loc[df3_est_43_Cont_1['DIA']==dia_ok]
+        df4_est_43_Cont_1_dia_2.head()
+
+        h01=df4_est_43_Cont_1_dia_2.H01
+        h01=float(h01)
+        h02=df4_est_43_Cont_1_dia_2.H02
+        h02=float(h02)
+        h03=df4_est_43_Cont_1_dia_2.H03
+        h03=float(h03)
+        h04=df4_est_43_Cont_1_dia_2.H04
+        h04=float(h04)
+        h05=df4_est_43_Cont_1_dia_2.H05
+        h05=float(h05)
+        h06=df4_est_43_Cont_1_dia_2.H06
+        h06=float(h06)
+        h07=df4_est_43_Cont_1_dia_2.H07
+        h07=float(h07)
+        h08=df4_est_43_Cont_1_dia_2.H08
+        h08=float(h08)
+        h09=df4_est_43_Cont_1_dia_2.H09
+        h09=float(h09)
+        h10=df4_est_43_Cont_1_dia_2.H10
+        h10=float(h10)
+        h11=df4_est_43_Cont_1_dia_2.H11
+        h11=float(h11)
+        h12=df4_est_43_Cont_1_dia_2.H12
+        h12=float(h12)
+        h13=df4_est_43_Cont_1_dia_2.H13
+        h13=float(h13)
+        h14=df4_est_43_Cont_1_dia_2.H14
+        h14=float(h14)
+        h15=df4_est_43_Cont_1_dia_2.H15
+        h15=float(h15)
+        h16=df4_est_43_Cont_1_dia_2.H16
+        h16=float(h16)
+        h17=df4_est_43_Cont_1_dia_2.H17
+        h17=float(h17)
+        h18=df4_est_43_Cont_1_dia_2.H18
+        h18=float(h18)
+        h19=df4_est_43_Cont_1_dia_2.H19
+        h19=float(h19)
+        h20=df4_est_43_Cont_1_dia_2.H20
+        h20=float(h20)
+        h21=df4_est_43_Cont_1_dia_2.H21
+        h21=float(h21)
+        h22=df4_est_43_Cont_1_dia_2.H22
+        h22=float(h22)
+        h23=df4_est_43_Cont_1_dia_2.H23
+        h23=float(h23)
+        h24=df4_est_43_Cont_1_dia_2.H24
+        h24=float(h24)
+        #print(h01,h02,h03,h04,h05,h06,h07,h08,h09,h10,h11,h12,h13,h14,h15,h16,h17,h18,h19,h20,h21,h22,h23)
+
+        #print(h01,h02)
+
+        #y=[h01,h02]
+
+        datos_del_dia=[h01,h02,h03,h04,h05,h06,h07,h08,h09,h10,h11,h12,h13,h14,h15,h16,h17,h18,h19,h20,h21,h22,h23,h24]
+        print("dia=",datos_del_dia)
+        #print("h[1]=",y[0],"h[2]=",y[1], "h[3]=",y[2], "h[4]=",y[3], "h[5]=",y[4], "h[6]=",y[5], "h[7]=",y[6], "h[8]=",y[7])
+        #print("h[9]=",y[8], "h[10]=",y[9], "h[11]=",y[10],"h[12]=",y[11],"h[13]=",y[12],"h[14]=",y[13],"h[15]=",y[14],"h[16]=",y[15])
+        #print("h[17]=",y[16], "h[18]=",y[17], "h[19]=",y[18],"h[20]=",y[19],"h[21]=",y[20],"h[22]=",y[21],"h[23]=",y[22],"h[24]=",y[23])
+
+        
+        if r3 == 0:
+            A_horario_est_4.insert(dia_ok,datos_del_dia)
+            #print("Dia=",dia_ok)
+            #print("Est4")
+            print("Dia=",dia_ok)
+            print("Est4")
+            print("A_horario4=",A_horario_est_4)
+            #print("something")
+            #wait = input("PRESS ENTER TO CONTINUE.")
+            #print("something")
+        elif r3 == 1:
+            A_horario_est_43.insert(dia_ok,datos_del_dia)
+            print("Dia=",dia_ok)
+            print("Est43")
+        elif r3 == 2:
+            A_horario_est_44.insert(dia_ok,datos_del_dia)
+            print("Dia=",dia_ok)
+            print("Est44")
+        elif r3 == 3:
+            A_horario_est_54.insert(dia_ok,datos_del_dia)
+            print("Dia=",dia_ok)
+            print("Est54")
+        elif r3 == 4:
+            A_horario_est_57.insert(dia_ok,datos_del_dia)
+            print("Dia=",dia_ok)
+            print("Est57")
+      
+        
+        #T = [[11, 12, 5, 2], [15, 6,10], [10, 8, 12, 5], [12,15,8,6]]
+
+        #T.insert(2, [0,5,11,13,6])
+        
+        
+        
+        print("A_horario")
+        print("A_horario4=",A_horario_est_4)
+        print("A_horario43=",A_horario_est_43)
+        print("A_horario44=",A_horario_est_44)
+        print("A_horario54=",A_horario_est_54)
+        print("A_horario57=",A_horario_est_57)
+        
+        #for r in A_horario:
+          #  for c in r:
+           #     print(c,end = " ")
+           # print()
+        
+        
+        
+        
+        
+        #Calcular los valores maximos
+        a1=df3_est_43_Cont_1.H01.max()
+        a2=df3_est_43_Cont_1.H02.max()
+        a3=df3_est_43_Cont_1.H03.max()
+        a4=df3_est_43_Cont_1.H04.max()
+        a5=df3_est_43_Cont_1.H05.max()
+        a6=df3_est_43_Cont_1.H06.max()
+        a7=df3_est_43_Cont_1.H07.max()
+        a8=df3_est_43_Cont_1.H08.max()
+        a9=df3_est_43_Cont_1.H09.max()
+        a10=df3_est_43_Cont_1.H10.max()
+        a11=df3_est_43_Cont_1.H11.max()
+        a12=df3_est_43_Cont_1.H12.max()
+        a13=df3_est_43_Cont_1.H13.max()
+        a14=df3_est_43_Cont_1.H14.max()
+        a15=df3_est_43_Cont_1.H15.max()
+        a16=df3_est_43_Cont_1.H16.max()
+        a17=df3_est_43_Cont_1.H17.max()
+        a18=df3_est_43_Cont_1.H18.max()
+        a19=df3_est_43_Cont_1.H19.max()
+        a20=df3_est_43_Cont_1.H20.max()
+        a21=df3_est_43_Cont_1.H21.max()
+        a22=df3_est_43_Cont_1.H22.max()
+        a23=df3_est_43_Cont_1.H23.max()
+        a24=df3_est_43_Cont_1.H24.max()
+        print('H1',a1,'H2',a2, 'H3',a3,'H4', a4, 'H5',a5, 'H6',a6, 'H7',a7,'H8', a8,'H9', a9, 'H10',a10, 'H11',
+              a11, 'H12',a12, 'H13',a13,'H14', a14, 'H15',a15, 'H16',a16, 'H17',a17, 'H18',a18, 'H19',a19, 
+              'H20',a20, 'H21',a21, 'H22',a22, 'H23',a23, 'H24', a24)
+        maxc=max(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+        minc=min(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+        print('maxc=', maxc,'minc=',minc)
+        
+        el_maximo_de_cada_estacion.append(maxc)
+                 
+        sumaz=0
+
+        #Este segmento de código es para identificar celdas sin dato o dato que no es un numero
+        #"Range de 0 a 24 , considera indices desde 0 hasta 23"
+        for r1 in range(0,24):
+
+            #Return True if x is a NaN (not a number), and False otherwise.
+            test1=math.isnan(datos_del_dia[r1])
+            print("Resultado Falso o verdadero",test1)
+            #Si el dato es igual a NaN entonces el resultado será True
+            if test1 == True:
+                sumaz=sumaz + 1
+                print("sumaz",sumaz)
+                print("Encontro un nan")
+                print("test1",test1)
+            else:
+            #Si el dato no es igual a Nan entonces el resultado es False
+                sumaz=sumaz
+                print("sumaz",sumaz)
+
+        print("Sumaz", sumaz)
+        
+        
+           
+
+    #Cálculo de la media mensual
+    #Nuevo loop
+    print("mean_diarios_validos",mean_diarios_validos)
+    print("media mensual",np.mean(mean_diarios_validos))
+    print("Días del mes con datos válidos",dias_del_mes_con_datos_validos)   
+
+    fig = plt.figure()
+    ax = fig.add_axes([0,0,1,1])   
+    ax.set_xlim(0, 31)
+    ax.set_ylim(0.0, 60)
+    #Media máxima de Maig 2019 y 20202 por debajo de 60 
+    ax.bar(dias_del_mes_con_datos_validos,mean_diarios_validos)   
+    #plt.title('Dia {dia_ok2} del mes de Maig de 2020 en la estación 43')
+    plt.title(Estacion_ok2)
+    plt.ylabel('Media diaria de PM10 (µg/m3) ',fontsize=13,weight="bold")
+    #plt.xlabel('Día del mes de Maig de 2020',fontsize=13, weight="bold")    
+    plt.xlabel('Día del mes de maig de 2019',fontsize=13, weight="bold")  
+    plt.grid(linestyle='dotted')
+    maximo_de_las_estaciones=max(el_maximo_de_cada_estacion)
+    print("maximo_de_las_estaciones",maximo_de_las_estaciones)
+    
+    
+    narchivo="C:/Users/ARMANDO/Documents/DAC/TR/grafiques/2019/Maig/PM10/"
+    nombre_archivo=Estacion_ok2
+    path=narchivo+Estacion_ok2
+    #La linea de código siguiente es la que se requiere para que los graficos que se envian a aun archivo se generen con 
+    #los datos completos de los ejes, leyendas, etcétera
+    plt.savefig(path, bbox_inches='tight')
+    
+"""print("A_horario")
+print("A_horario4=",A_horario_est_4)
+print("A_horario43=",A_horario_est_43)
+print("A_horario44=",A_horario_est_44)
+print("A_horario54=",A_horario_est_54)
+print("A_horario57=",A_horario_est_57)"""
+
+#for y2 in range(2,31):
+for y2 in range(0,28):
+
+    x_todos=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+    letreros_x=['1', '2', '3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24']
+    print("y2_nuevo=",y2)
+    y_est43=A_horario_est_43[y2]
+    print("yest43=",A_horario_est_43[y2])
+    y_est57=A_horario_est_57[y2]
+    print("yest57=",A_horario_est_57[y2])
+    dia_ok3=y2+1
+    if dia_ok3 >= 7:
+        dia_ok3=y2+4 
+    fig = plt.figure()
+    ax = fig.add_axes([0,0,1,1])   
+    ax.set_xlim(1, 24)
+    ax.set_ylim(0.0, 220)
+    #plt.title(Estacion_ok2)
+    plt.plot(x_todos,A_horario_est_4[y2],'b', label='Estació 4')
+    plt.plot(x_todos,A_horario_est_4[y2], 'b.')
+    plt.plot(x_todos,A_horario_est_43[y2], 'g',label='Estació 43')
+    plt.plot(x_todos,A_horario_est_43[y2],'g.')
+    plt.plot(x_todos,A_horario_est_44[y2], 'r',label='Estació 44')
+    plt.plot(x_todos,A_horario_est_44[y2],'r.')
+    plt.plot(x_todos,A_horario_est_54[y2], 'c',label='Estació 54')
+    plt.plot(x_todos,A_horario_est_54[y2],'c.')
+    plt.plot(x_todos,A_horario_est_57[y2],'m', label='Estació 57')
+    plt.plot(x_todos,A_horario_est_57[y2],'m.')
+
+    
+    #plt.xticks([0.2, 0.4, 0.6, 0.8, 1.],
+    #      ["Jan\n2009", "Feb\n2009", "Mar\n2009", "Apr\n2009", "May\n2009"])
+    #plt.xticks([1,2],
+    #           ["1", "2"])
+    plt.xticks( x_todos, letreros_x)
+
+
+    
+    #PM10
+    xref1=[0,24]
+    yref1=[20,20]
+    xref2=[0,24]
+    yref2=[35,35]
+    xref3=[0,24]
+    yref3=[50,50]
+    xref4=[0,24]
+    yref4=[100,100]
+    xref5=[0,24]
+    yref5=[1200,1200]
+    plt.plot(xref1,yref1,'C7--')
+    plt.text(24.5, 20, 'N1',fontsize=10)
+    plt.plot(xref2,yref2,'C7--')
+    plt.text(24.5, 35, 'N2',fontsize=10)
+    plt.plot(xref3,yref3,'C7--')
+    plt.text(24.5, 50, 'N3',fontsize=10)
+    plt.plot(xref4,yref4,'C7--')
+    plt.text(24.5, 100, 'N4',fontsize=10)
+    plt.plot(xref5,yref5,'C7--')
+    plt.text(-0.5, 218, '220',fontsize=10)
+    plt.text(.75, 218, '-',fontsize=10)
+
+    plt.ylabel('Valor de PM10 (µg/m3) ',fontsize=13,weight="bold")
+    #plt.xlabel('Día del mes de Maig de 2020',fontsize=13, weight="bold")
+    plt.legend()
+    #plt.ylabel("Loss  (Million Euros)",fontsize=14,weight="bold")
+    #plt.xlabel('Return period (years)',fontsize=14, weight="bold")
+    plt.grid(linestyle='dotted')
+    #dia_letrero= b2 + dia_ok2 + " del mes de maig de 2019 en l'estació" + Estacion_ok2
+    #letrero_nuevo= "Hora del día" + " " + str(y) + " del mes de maig de 2019 en las estaciones indicadas" 
+    
+    letrero_nuevo= "Hora del dia \n" + "[" + str(dia_ok3) + "/05/2019]"
+    plt.xlabel(letrero_nuevo ,fontsize=13, weight="bold")  
+    plt.grid(linestyle='dotted')
+    
+    import matplotlib.pyplot as plt
+import numpy as np 
+import math
+#Contaminante 10, estaciones en 2020 estaciones=[4,43,44,54,57,58]
+#estaciones=[4,43,44,54,57,58]
+#Contaminante 10, estaciones en 2019 [4,43,44,54,57,58]
+estaciones=[4,43,44,54,57]
+#estaciones=[4,42,43,44,50,54,57,58]
+
+el_maximo_de_cada_estacion=[]
+
+#Arreglo con datos medios por estacion
+#Nombre arreglo_medias_estacion 
+A_media=[]
+A_media_est_4=[]
+A_media_est_43=[]
+A_media_est_44=[]
+A_media_est_54=[]
+A_media_est_57=[]
+#A_media_est_42=[]
+#A_media_est_50=[]
+
+
+ #Con la linea siguiente se declara el nombre de un arreglo o lista de datos
+mean_diarios_validos=[]
+mean_diarios_validos_est_4=[]
+mean_diarios_validos_est_43=[]
+mean_diarios_validos_est_44=[]
+mean_diarios_validos_est_54=[]
+mean_diarios_validos_est_57=[]
+#mean_diarios_validos_est_42=[]
+#mean_diarios_validos_est_50=[]
+  
+    #La variable siguiente es para contar los dias en los que hubo datos válidos (datos iguales o mayores al 75%)
+dia_con_datos_validos=0
+dia_con_datos_validos_est_4=0
+dia_con_datos_validos_est_43=0
+dia_con_datos_validos_est_44=0
+dia_con_datos_validos_est_54=0
+dia_con_datos_validos_est_57=0
+#dia_con_datos_validos_est_42=0
+#dia_con_datos_validos_est_50=0
+    
+    #El arreglo o vector siguiente es para identificar qué dias del mes hubo datos válidos
+dias_del_mes_con_datos_validos=[]
+dias_del_mes_con_datos_validos_est_4=[]
+dias_del_mes_con_datos_validos_est_43=[]
+dias_del_mes_con_datos_validos_est_44=[]
+dias_del_mes_con_datos_validos_est_54=[]
+dias_del_mes_con_datos_validos_est_57=[]
+#dias_del_mes_con_datos_validos_est_42=[]
+#dias_del_mes_con_datos_validos_est_50=[]    
+
+for r3 in range(0,5):
+    Estacion_ok=estaciones[r3]
+    print("Estacion ok",Estacion_ok)
+    #Selecciona los datos de la estación 43
+    df3_est_43_Cont_1=df2_contamina_1.loc[df2_contamina_1['ESTACIO']==Estacion_ok]
+    df3_est_43_Cont_1.head()
+   
+   
+    #Para que revise los 30 dias posibles
+    #Para mes con 30 dias range(1,32) y para mes con 31 dias range(1,32)
+    #NOTA IMPORTANTE: EL RANGO DEBE AJUSTARSE SEGUN EL MES QUE SE LEA y LOS DIAS REGISTRADOS.
+    #aBRIL 2020 range(1,32)
+    #Maig 2019 range(2,31)
+    for j in range(1,32):
+        #NOTA IMPORTANTE: SE MOVIERON LAS DEFINICIONES DE LOS ARREGLOS ac_est_4. etc a las lineas siguientes
+        # dentro del lloop de los dias del mes (j)- 8 SEPT -2020
+        ac_est_4=[]
+        ac_est_43=[]
+        ac_est_44=[]
+        ac_est_54=[]
+        ac_est_57=[]
+        #ac_est_42=[]
+        #ac_est_50=[]
+        dia_ok=j
+        print("dia_ok",dia_ok)
+        df4_est_43_Cont_1_dia_2=df3_est_43_Cont_1.loc[df3_est_43_Cont_1['DIA']==dia_ok]
+        df4_est_43_Cont_1_dia_2.head()
+        print("df4_est_43_Cont_1_dia_2",df4_est_43_Cont_1_dia_2)
+        test25=df4_est_43_Cont_1_dia_2.empty
+        print("test25",test25)
+
+        if test25 == False:
+            h01=df4_est_43_Cont_1_dia_2.H01
+            h01=float(h01)
+            h02=df4_est_43_Cont_1_dia_2.H02
+            h02=float(h02)
+            h03=df4_est_43_Cont_1_dia_2.H03
+            h03=float(h03)
+            h04=df4_est_43_Cont_1_dia_2.H04
+            h04=float(h04)
+            h05=df4_est_43_Cont_1_dia_2.H05
+            h05=float(h05)
+            h06=df4_est_43_Cont_1_dia_2.H06
+            h06=float(h06)
+            h07=df4_est_43_Cont_1_dia_2.H07
+            h07=float(h07)
+            h08=df4_est_43_Cont_1_dia_2.H08
+            h08=float(h08)
+            h09=df4_est_43_Cont_1_dia_2.H09
+            h09=float(h09)
+            h10=df4_est_43_Cont_1_dia_2.H10
+            h10=float(h10)
+            h11=df4_est_43_Cont_1_dia_2.H11
+            h11=float(h11)
+            h12=df4_est_43_Cont_1_dia_2.H12
+            h12=float(h12)
+            h13=df4_est_43_Cont_1_dia_2.H13
+            h13=float(h13)
+            h14=df4_est_43_Cont_1_dia_2.H14
+            h14=float(h14)
+            h15=df4_est_43_Cont_1_dia_2.H15
+            h15=float(h15)
+            h16=df4_est_43_Cont_1_dia_2.H16
+            h16=float(h16)
+            h17=df4_est_43_Cont_1_dia_2.H17
+            h17=float(h17)
+            h18=df4_est_43_Cont_1_dia_2.H18
+            h18=float(h18)
+            h19=df4_est_43_Cont_1_dia_2.H19
+            h19=float(h19)
+            h20=df4_est_43_Cont_1_dia_2.H20
+            h20=float(h20)
+            h21=df4_est_43_Cont_1_dia_2.H21
+            h21=float(h21)
+            h22=df4_est_43_Cont_1_dia_2.H22
+            h22=float(h22)
+            h23=df4_est_43_Cont_1_dia_2.H23
+            h23=float(h23)
+            h24=df4_est_43_Cont_1_dia_2.H24
+            h24=float(h24)
+            #print(h01,h02,h03,h04,h05,h06,h07,h08,h09,h10,h11,h12,h13,h14,h15,h16,h17,h18,h19,h20,h21,h22,h23)
+
+            #print(h01,h02)
+
+            #y=[h01,h02]
+
+            y=[h01,h02,h03,h04,h05,h06,h07,h08,h09,h10,h11,h12,h13,h14,h15,h16,h17,h18,h19,h20,h21,h22,h23,h24]
+            print("dia=",y)
+            print("h[1]=",y[0],"h[2]=",y[1], "h[3]=",y[2], "h[4]=",y[3], "h[5]=",y[4], "h[6]=",y[5], "h[7]=",y[6], "h[8]=",y[7])
+            print("h[9]=",y[8], "h[10]=",y[9], "h[11]=",y[10],"h[12]=",y[11],"h[13]=",y[12],"h[14]=",y[13],"h[15]=",y[14],"h[16]=",y[15])
+            print("h[17]=",y[16], "h[18]=",y[17], "h[19]=",y[18],"h[20]=",y[19],"h[21]=",y[20],"h[22]=",y[21],"h[23]=",y[22],"h[24]=",y[23])
+
+
+            #Calcular los valores maximos
+            a1=df3_est_43_Cont_1.H01.max()
+            a2=df3_est_43_Cont_1.H02.max()
+            a3=df3_est_43_Cont_1.H03.max()
+            a4=df3_est_43_Cont_1.H04.max()
+            a5=df3_est_43_Cont_1.H05.max()
+            a6=df3_est_43_Cont_1.H06.max()
+            a7=df3_est_43_Cont_1.H07.max()
+            a8=df3_est_43_Cont_1.H08.max()
+            a9=df3_est_43_Cont_1.H09.max()
+            a10=df3_est_43_Cont_1.H10.max()
+            a11=df3_est_43_Cont_1.H11.max()
+            a12=df3_est_43_Cont_1.H12.max()
+            a13=df3_est_43_Cont_1.H13.max()
+            a14=df3_est_43_Cont_1.H14.max()
+            a15=df3_est_43_Cont_1.H15.max()
+            a16=df3_est_43_Cont_1.H16.max()
+            a17=df3_est_43_Cont_1.H17.max()
+            a18=df3_est_43_Cont_1.H18.max()
+            a19=df3_est_43_Cont_1.H19.max()
+            a20=df3_est_43_Cont_1.H20.max()
+            a21=df3_est_43_Cont_1.H21.max()
+            a22=df3_est_43_Cont_1.H22.max()
+            a23=df3_est_43_Cont_1.H23.max()
+            a24=df3_est_43_Cont_1.H24.max()
+            print("valores máximos por hora")
+            print('H1',a1,'H2',a2, 'H3',a3,'H4', a4, 'H5',a5, 'H6',a6, 'H7',a7,'H8', a8,'H9', a9, 'H10',a10, 'H11',
+                  a11, 'H12',a12, 'H13',a13,'H14', a14, 'H15',a15, 'H16',a16, 'H17',a17, 'H18',a18, 'H19',a19, 
+                  'H20',a20, 'H21',a21, 'H22',a22, 'H23',a23, 'H24', a24)
+            print("Dia",y)
+            print("Valor máximo")
+            maxc=max(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+            minc=min(a1,a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24)
+            print('maxc=', maxc,'minc=',minc)
+
+            el_maximo_de_cada_estacion.append(maxc)
+
+            sumaz=0
+
+            #Este segmento de código es para identificar celdas sin dato o dato que no es un numero
+            #"Range de 0 a 24 , considera indices desde 0 hasta 23"
+            for r1 in range(0,24):
+
+                #Return True if x is a NaN (not a number), and False otherwise.
+                test1=math.isnan(y[r1])
+                #print(test1)
+                #Si el dato es igual a NaN entonces el resultado será True
+                if test1 == True:
+                    sumaz=sumaz + 1
+                    #print("sumaz",sumaz)
+                    #print("Encontro un nan")
+                    #print("test1",test1)
+                else:
+                #Si el dato no es igual a Nan entonces el resultado es False
+                    sumaz=sumaz
+                    #print("sumaz",sumaz)
+
+            #print("Sumaz", sumaz)
+
+
+            if sumaz <= 6:
+            #Si sumaz es menor o igual a 6 quiere decir que las horas sin datos fueron solo 6 o menos y por lo tanto
+            #consideramos que los datos disponible serán 18 o mas y por lo tanto será un día válido
+                #Con la linea de codigo siguiente hago que se incluya en el arreglo llamado dias_del_mes_con_datos_validos
+                #este día considerado como válido
+                #dias_del_mes_con_datos_validos.append(dia_ok)
+
+                if r3 == 0:
+                    #El arreglo o vector siguiente es para identificar qué dias del mes hubo datos válidos
+                    #dias_del_mes_con_datos_validos=[]
+                    #ac_est son datos del contaminante
+                    #ac_est_4.append(y[r1])
+                    #print("Revision y[r1]",y[r1])
+                    #NOTA IMPORTANTE: SE ELIMINARON O DESACTIVARON LOS RENGLONES ANTERIORES- 8 SEPT -2020
+                    dias_del_mes_con_datos_validos_est_4.append(dia_ok)
+                
+                elif r3 == 1:
+                    #ac_est_43.append(y[r1])
+                    #print("Revision y[r1]",y[r1])
+                    dias_del_mes_con_datos_validos_est_43.append(dia_ok)
+
+                elif r3 == 2:
+                    #ac_est_44.append(y[r1])
+                    #print("Revision y[r1]",y[r1])
+                    dias_del_mes_con_datos_validos_est_44.append(dia_ok)
+                    
+                elif r3 == 3:
+                    #ac_est_54.append(y[r1])
+                    #print("Revision y[r1]",y[r1])
+                    dias_del_mes_con_datos_validos_est_54.append(dia_ok)
+
+                elif r3 == 4:
+                    #ac_est_57.append(y[r1])
+                    #print("Revision y[r1]",y[r1])
+                    dias_del_mes_con_datos_validos_est_57.append(dia_ok)
+
+                       #Fin de codigo por modificar
+
+
+                #Como es un día valido lo sumo a la cuenta de días válidos
+                dia_con_datos_validos= dia_con_datos_validos+1
+
+
+                x=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24']
+                #x=['1','2']
+
+                fig = plt.figure()
+                ax = fig.add_axes([0,0,1,1])
+                #ax = fig
+                ax.set_xlim(-1, 24)
+                #ax.set_ylim(0.0, 220)
+                dia_ok2=str(dia_ok)
+                Estacion_ok2=str(Estacion_ok)
+                b2="Dia "
+                #dia_letrero= b2 + dia_ok2 + " del mes de maig de 2020 en l'estació" + Estacion_ok2
+                dia_letrero= b2 + dia_ok2 + " del mes de maig de 2019 en l'estació" + Estacion_ok2
+                #plt.title('Dia {dia_ok2} del mes de maig de 2020 en la estación 43')
+                plt.title(dia_letrero)
+                #plt.title('Version Catalan {Cantidad} media de PM10 por hora en el mes de maig de 2020 en la estación 43')
+                plt.ylabel('Quantitat de PM10 (µg/m3) ',fontsize=13,weight="bold")
+                plt.xlabel('Hora del dia',fontsize=13, weight="bold")
+                plt.grid(linestyle='dotted')
+                ax.bar(x,y)
+                #plt.plot(x,y)
+                narchivo="C:/Users/ARMANDO/Documents/DAC/TR/grafiques/2019/Maig/PM10/"
+                nombre_archivo=dia_letrero
+                path=narchivo+dia_letrero
+                #La linea de código siguiente es la que se requiere para que los graficos que se envian a aun archivo se generen con 
+                #los datos completos de los ejes, leyendas, etcétera
+                plt.savefig(path, bbox_inches='tight')
+                #Calculo de la media diaria de los valores de PM10
+                y=[h01,h02,h03,h04,h05,h06,h07,h08,h09,h10,h11,h12,h13,h14,h15,h16,h17,h18,h19,h20,h21,h22,h23,h24]
+                #numpy.mean(df['col_name'])
+                #a=numpy.mean(y)
+                x=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24']
+                #x=['1','2']
+                a = np.array([h01,h02,h03,h04,h05,h06,h07,h08,h09,h10,h11,h12,h13,h14,h15,h16,h17,h18,h19,h20,h21,h22,h23,h24]) 
+                print ('Nuestro array sin corregir es:' )
+                print (a) 
+                print ('\n')  
+                print ('Applying mean() function:') 
+                print (np.mean(a)) 
+                print ('\n')
+
+                #Segmento de código en el que se genera el arreglo que contiene los datos válidos del día, es decir, elimina
+                #los NaN.
+                #ac=ARRAY_CORREGIDO
+                #Se declara el nuevo arreglo ac que arreglo corregido
+                ac=[]
+                #Se generan nuevos arreglos con los datos validos de cada dia para cada estación
+
+                for r2 in range(0,24):
+                #"Range de 0 a 24 , considera indices desde 0 hasta 23"
+                #En este for generará los nuevos arreglos con datos horarios válidos por día para estimar la media diaria
+                #Return True if x is a NaN (not a number), and False otherwise.
+                    test1=math.isnan(y[r2])
+                    print(test1)
+                    if test1 == True:
+                        #Si es verdadero no hagas nada
+                        no_hace_nada=22
+                    else:
+                    #Si es un numero voy agregandolo al arreglo ac
+                        ac.append(y[r2])
+                        #Codigo por modificar
+                        #ac_est_4=[]
+                        #ac_est_43=[]
+                        #ac_est_44=[]
+                        #ac_est_54=[]
+                        #ac_est_57=[]
+                        if r3 == 0:
+                            ac_est_4.append(y[r2])
+                            #print("Dia=",dia_ok)
+                            #print("Est4")
+                            #print("Dia=",dia_ok)
+                            #print("Est4")
+                            #print("ac_est_4=",ac_est_4)
+                            #print("something")
+                            #wait = input("PRESS ENTER TO CONTINUE.")
+                            #print("something")
+                            
+                        elif r3 == 1:
+                            ac_est_43.append(y[r2])
+                            #print("Dia=",dia_ok)
+                            #print("Est43")
+                        elif r3 == 2:
+                            ac_est_44.append(y[r2])
+                            #print("Dia=",dia_ok)
+                            #print("Est44")
+                            
+                        elif r3 == 3:
+                            ac_est_54.append(y[r2])
+                            #print("Dia=",dia_ok)
+                            #print("Est54")
+                        elif r3 == 4:
+                            ac_est_57.append(y[r2])
+                            #print("Dia=",dia_ok)
+                            #print("Est57")
+                       #Fin de codigo por modificar
+
+
+                #Aquí termina el loop definido por "for r2"
+                print ('Nuestros array corregidos son:' )
+                print ("ac_est_4",ac_est_4) 
+                print ("ac_est_43",ac_est_43) 
+                print ("ac_est_44",ac_est_44)
+                print ("ac_est_54",ac_est_54) 
+                print ("ac_est_57",ac_est_57) 
+                print ('\n')  
+                #Aqui voy- 2 sept-2020
+                print ('Applying mean() function:') 
+                #Calcula la media a partir del arreglo corregido y la imprime
+                print("Dia del mes",dia_ok)
+                print ("Media del arreglo sin Nan_est_4",np.mean(ac_est_4))
+
+                #Imprimir el numero de días con datos validos
+                print ('dia_con_datos_validos',dia_con_datos_validos) 
+
+                #Calculo de medias corregidas en caso de que existan pocos datos durante el día estudiado
+                #Va formando el array de los means diarios válidos
+                mean_diarios_validos.append(np.mean(ac))
+
+                if r3 == 0:
+                    #dias_del_mes_con_datos_validos=dias_del_mes_con_datos_validos_est_4
+                    mean_diarios_validos_est_4.append(np.mean(ac_est_4))
+                    
+                elif r3 == 1:
+                    #dias_del_mes_con_datos_validos=dias_del_mes_con_datos_validos_est_43
+                    mean_diarios_validos_est_43.append(np.mean(ac_est_43))
+                    
+                elif r3 == 2:
+                    #dias_del_mes_con_datos_validos=dias_del_mes_con_datos_validos_est_44
+                    mean_diarios_validos_est_44.append(np.mean(ac_est_44))  
+                    
+                    
+                elif r3 == 3:
+                    #dias_del_mes_con_datos_validos=dias_del_mes_con_datos_validos_est_54
+                    mean_diarios_validos_est_54.append(np.mean(ac_est_54))
+
+                elif r3 == 4:
+                    #dias_del_mes_con_datos_validos=dias_del_mes_con_datos_validos_est_57
+                    mean_diarios_validos_est_57.append(np.mean(ac_est_57))     
+
+
+
+                       #Fin de codigo por modificar 
+
+
+            else:
+                #Solo genera y manda a un archivo el grafico de barras con el dia con datos incompletos
+                fig = plt.figure()
+                ax = fig.add_axes([0,0,1,1])
+                #ax = fig
+                ax.set_xlim(-1, 24)
+                #ax.set_ylim(0.0, 220)
+                dia_ok2=str(dia_ok)
+                b2="Dia "
+                #dia_letrero= b2 + dia_ok2 + " del mes de maig de 2020 en l'estació" + Estacion_ok2
+                dia_letrero= b2 + dia_ok2 + " del mes de maig de 2019 en l'estació" + Estacion_ok2
+                #plt.title('Dia {dia_ok2} del mes de maig de 2020 en la estación 43')
+                plt.title(dia_letrero)
+                #plt.title('Version Catalan {Cantidad} media de PM10 por hora en el mes de maig de 2020 en la estación 43')
+                plt.ylabel('Quantitat de PM10 (µg/m3) ',fontsize=13,weight="bold")
+                plt.xlabel('Hora del dia',fontsize=13, weight="bold")
+                plt.grid(linestyle='dotted')
+                ax.bar(x,y)
+                #plt.plot(x,y)
+                narchivo="C:/Users/ARMANDO/Documents/DAC/TR/grafiques/2019/Maig/PM10/"
+                nombre_archivo=dia_letrero
+                path=narchivo+dia_letrero
+                #La linea de código siguiente es la que se requiere para que los graficos que se envian a aun archivo se generen con 
+                #los datos completos de los ejes, leyendas, etcétera
+                plt.savefig(path, bbox_inches='tight')
+                print("No hay suficientes datos para calcular la media")
+                no_hace_nada=22
+    #Cálculo de la media mensual
+
+    #print("mean_diarios_validos",mean_diarios_validos)
+    #print("media mensual",np.mean(mean_diarios_validos))
+    #print("Días del mes con datos válidos",dias_del_mes_con_datos_validos)   
+
+    
+    if r3 == 0:
+                #El arreglo o vector siguiente es para identificar qué dias del mes hubo datos válidos
+                print("media mensual est 4",np.mean(mean_diarios_validos_est_4))
+            
+    elif r3 == 1:
+                print("media mensual est 43",np.mean(mean_diarios_validos_est_43))
+        
+    elif r3 == 2:
+                print("media mensual est 44",np.mean(mean_diarios_validos_est_44))
+            
+    elif r3 == 3:
+                print("media mensual est 54",np.mean(mean_diarios_validos_est_54))
+                        
+    elif r3 == 4:
+                print("media mensual est 57",np.mean(mean_diarios_validos_est_57))
+                      
+                   #Fin de codigo por modificar 
+        
+    fig = plt.figure()
+    ax = fig.add_axes([0,0,1,1])   
+    ax.set_xlim(0, 31)
+    #ax.set_ylim(0.0, 60)
+    #Media máxima de maig 2019 y 20202 por debajo de 60 
+    #ax.bar(dias_del_mes_con_datos_validos,mean_diarios_validos)
+    print("r3=",r3)
+    if r3 == 0:
+               print("dias_del_mes_con_datos_validos_est_4=",dias_del_mes_con_datos_validos_est_4)
+               print("mean_diarios_validos_est_4",mean_diarios_validos_est_4)
+               ax.bar(dias_del_mes_con_datos_validos_est_4,mean_diarios_validos_est_4)
+            
+    elif r3 == 1:
+               ax.bar(dias_del_mes_con_datos_validos_est_43,mean_diarios_validos_est_43)
+                        
+    elif r3 == 2:
+               ax.bar(dias_del_mes_con_datos_validos_est_44,mean_diarios_validos_est_44)
+                       
+    elif r3 == 3:
+               ax.bar(dias_del_mes_con_datos_validos_est_54,mean_diarios_validos_est_54)
+                        
+    elif r3 == 4:
+               ax.bar(dias_del_mes_con_datos_validos_est_57,mean_diarios_validos_est_57)
+            
+    print("dias_del_mes_con_datos_validos_est_4",dias_del_mes_con_datos_validos_est_4)
+    print("mean_diarios_validos_est_4",mean_diarios_validos_est_4)
+    #plt.title('Dia {dia_ok2} del mes de maig de 2020 en la estación 43')
+    plt.title(Estacion_ok2)
+    plt.ylabel('Mitjana diaria de PM10 (µg/m3) ',fontsize=13,weight="bold")
+    #plt.xlabel('Día del mes de maig de 2020',fontsize=13, weight="bold")    
+    plt.xlabel("Dia del mes de maig de 2019",fontsize=13, weight="bold")  
+    plt.grid(linestyle='dotted')
+    maximo_de_las_estaciones=max(el_maximo_de_cada_estacion)
+    print("maximo_de_las_estaciones",maximo_de_las_estaciones)
+    print("el_maximo_de_cada_estacion",el_maximo_de_cada_estacion)
+    
+    narchivo="C:/Users/ARMANDO/Documents/DAC/TR/grafiques/2019/Maig/PM10/"
+    nombre_archivo=Estacion_ok2
+    path=narchivo+Estacion_ok2
+    #La linea de código siguiente es la que se requiere para que los graficos que se envian a aun archivo se generen con 
+    #los datos completos de los ejes, leyendas, etcétera
+    plt.savefig(path, bbox_inches='tight')
+
+#Grafico con las medias mensuales de cada estación
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])   
+ax.set_xlim(1, 31)
+ax.set_ylim(0.0, 110)
+xref1=[0,31]
+yref1=[20,20]
+xref2=[0,31]
+yref2=[35,35]
+xref3=[0,31]
+yref3=[50,50]
+xref4=[0,31]
+yref4=[100,100]
+xref5=[0,31]
+yref5=[1200,1200]
+plt.plot(xref1,yref1,'C7--')
+plt.text(31.5, 20, 'N1',fontsize=10)
+plt.plot(xref2,yref2,'C7--')
+plt.text(31.5, 35, 'N2',fontsize=10)
+plt.plot(xref3,yref3,'C7--')
+plt.text(31.5, 50, 'N3',fontsize=10)
+plt.plot(xref4,yref4,'C7--')
+plt.text(31.5, 100, 'N4',fontsize=10)
+plt.plot(xref5,yref5,'C7--')
+plt.text(-0.5, 109, '110',fontsize=10)
+plt.text(.75, 109, '-',fontsize=10)
+
+
+plt.ylabel('Valor de la mitjana diaria de PM10 (µg/m3) ',fontsize=13,weight="bold")
+plt.xlabel("Dia del mes de maig de 2019",fontsize=13, weight="bold")
+
+#plt.ylabel("Loss  (Million Euros)",fontsize=14,weight="bold")
+#plt.xlabel('Return period (years)',fontsize=14, weight="bold")
+plt.grid(linestyle='dotted')
+#dia_letrero= b2 + dia_ok2 + " del mes de maig de 2019 en l'estació" + Estacion_ok2
+#letrero_nuevo= "Hora del día" + " " + str(y) + " del mes de maig de 2019 en las estaciones indicadas" 
+#plt.title(Estacion_ok2)
+print("dias_del_mes_con_datos_validos_est_4=",dias_del_mes_con_datos_validos_est_4) 
+plt.plot(dias_del_mes_con_datos_validos_est_4,mean_diarios_validos_est_4,'b+', label='Estació 4')
+#plt.plot(x_todos,A_horario_est_4[y2], 'b.')
+print("dias_del_mes_con_datos_validos_est_43=",dias_del_mes_con_datos_validos_est_43) 
+plt.plot(dias_del_mes_con_datos_validos_est_43,mean_diarios_validos_est_43, 'g+',label='Estació 43')
+#plt.plot(x_todos,A_horario_est_43[y2],'g.')
+print("dias_del_mes_con_datos_validos_est_44=",dias_del_mes_con_datos_validos_est_44) 
+plt.plot(dias_del_mes_con_datos_validos_est_44,mean_diarios_validos_est_44, 'r+',label='Estació 44')
+#plt.plot(dias_del_mes_con_datos_validos_est_44,mean_diarios_validos_est_44,'r.')
+print("dias_del_mes_con_datos_validos_est_54=",dias_del_mes_con_datos_validos_est_54) 
+plt.plot(dias_del_mes_con_datos_validos_est_54,mean_diarios_validos_est_54, 'c+',label='Estació 54')
+#plt.plot(x_todos,A_horario_est_54[y2],'c.')
+print("dias_del_mes_con_datos_validos_est_57=",dias_del_mes_con_datos_validos_est_57) 
+plt.plot(dias_del_mes_con_datos_validos_est_57,mean_diarios_validos_est_57,'m+', label='Estació 57')
+"""print("dias_del_mes_con_datos_validos_est_58=",dias_del_mes_con_datos_validos_est_58) 
+plt.plot(dias_del_mes_con_datos_validos_est_58,mean_diarios_validos_est_57,'y+', label='Estació 58')"""
+x_todos=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+letreros_x=['1', '2', '3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
+plt.xticks( x_todos, letreros_x)  
+plt.legend()
+
+#EStacion 4
+numero_de_medias_est_4=len(mean_diarios_validos_est_4)
+print("numero_de_medias_est_4",numero_de_medias_est_4)
+print("mean_diarios_validos_est_4[0]",mean_diarios_validos_est_4[0])
+print("mean_diarios_validos_est_4[1]",mean_diarios_validos_est_4[1])
+dia_total_dentro_nivel_1_est4=0
+dia_total_dentro_nivel_2_est4=0
+dia_total_dentro_nivel_3_est4=0
+dia_total_dentro_nivel_4_est4=0
+dia_total_dentro_nivel_5_est4=0
+for k in range(0,numero_de_medias_est_4):
+
+    media_del_dia=mean_diarios_validos_est_4[k]
+
+    if media_del_dia <= 20:
+               dia_total_dentro_nivel_1_est4=dia_total_dentro_nivel_1_est4+1           
+    elif media_del_dia <= 35:
+               dia_total_dentro_nivel_2_est4=dia_total_dentro_nivel_2_est4+1                        
+    elif media_del_dia <= 50:
+               dia_total_dentro_nivel_3_est4=dia_total_dentro_nivel_3_est4+1   
+    elif media_del_dia <= 100:
+               dia_total_dentro_nivel_4_est4=dia_total_dentro_nivel_4_est4+1 
+    elif media_del_dia > 100:
+               dia_total_dentro_nivel_5_est4=dia_total_dentro_nivel_5_est4+1 
+
+print("dia_total_dentro_nivel_1_est4",dia_total_dentro_nivel_1_est4)
+print("dia_total_dentro_nivel_2_est4",dia_total_dentro_nivel_2_est4)
+print("dia_total_dentro_nivel_3_est4",dia_total_dentro_nivel_3_est4)
+print("dia_total_dentro_nivel_4_est4",dia_total_dentro_nivel_4_est4)
+print("dia_total_dentro_nivel_5_est4",dia_total_dentro_nivel_5_est4)
+
+dia_total_dentro_nivel_1_est4_norma=dia_total_dentro_nivel_1_est4/numero_de_medias_est_4
+dia_total_dentro_nivel_2_est4_norma=dia_total_dentro_nivel_2_est4/numero_de_medias_est_4
+dia_total_dentro_nivel_3_est4_norma=dia_total_dentro_nivel_3_est4/numero_de_medias_est_4
+dia_total_dentro_nivel_4_est4_norma=dia_total_dentro_nivel_4_est4/numero_de_medias_est_4
+dia_total_dentro_nivel_5_est4_norma=dia_total_dentro_nivel_5_est4/numero_de_medias_est_4
+
+print("dia_total_dentro_nivel_1_est4_norma",dia_total_dentro_nivel_1_est4_norma)
+print("dia_total_dentro_nivel_2_est4_norma",dia_total_dentro_nivel_2_est4_norma)
+print("dia_total_dentro_nivel_3_est4_norma",dia_total_dentro_nivel_3_est4_norma)
+print("dia_total_dentro_nivel_4_est4_norma",dia_total_dentro_nivel_4_est4_norma)
+print("dia_total_dentro_nivel_5_est4_norma",dia_total_dentro_nivel_5_est4_norma)
+
+distribucion_dias_est4=[dia_total_dentro_nivel_1_est4, dia_total_dentro_nivel_2_est4,dia_total_dentro_nivel_3_est4,dia_total_dentro_nivel_4_est4,dia_total_dentro_nivel_5_est4]
+labels = 'Nivel 1', 'Nivel 2', 'Nivel 3', 'Nivel 4', 'Nivel 5'
+distribucion_dias_est4_norma=[dia_total_dentro_nivel_1_est4_norma,dia_total_dentro_nivel_2_est4_norma,dia_total_dentro_nivel_3_est4_norma,dia_total_dentro_nivel_4_est4_norma,dia_total_dentro_nivel_5_est4_norma]
+
+
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])   
+explode = (0, 0, 0, 0,0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+fig1, ax1 = plt.subplots()
+ax1.barh(labels, distribucion_dias_est4)
+#ax1.pie(distribucion_dias_est4, explode=explode, labels=labels, autopct='%1.1f%%',
+#        shadow=True, startangle=90)
+
+#EStacion 43
+numero_de_medias_est_43=len(mean_diarios_validos_est_43)
+print("numero_de_medias_est_43",numero_de_medias_est_43)
+print("mean_diarios_validos_est_43[0]",mean_diarios_validos_est_43[0])
+print("mean_diarios_validos_est_43[1]",mean_diarios_validos_est_43[1])
+dia_total_dentro_nivel_1_est43=0
+dia_total_dentro_nivel_2_est43=0
+dia_total_dentro_nivel_3_est43=0
+dia_total_dentro_nivel_4_est43=0
+dia_total_dentro_nivel_5_est43=0
+for k in range(0,numero_de_medias_est_43):
+
+    media_del_dia=mean_diarios_validos_est_43[k]
+
+    if media_del_dia <= 20:
+               dia_total_dentro_nivel_1_est43=dia_total_dentro_nivel_1_est43+1           
+    elif media_del_dia <= 35:
+               dia_total_dentro_nivel_2_est43=dia_total_dentro_nivel_2_est43+1                        
+    elif media_del_dia <= 50:
+               dia_total_dentro_nivel_3_est43=dia_total_dentro_nivel_3_est43+1   
+    elif media_del_dia <= 100:
+               dia_total_dentro_nivel_4_est43=dia_total_dentro_nivel_4_est43+1 
+    elif media_del_dia > 100:
+               dia_total_dentro_nivel_5_est43=dia_total_dentro_nivel_5_est43+1 
+
+print("dia_total_dentro_nivel_1_est43",dia_total_dentro_nivel_1_est43)
+print("dia_total_dentro_nivel_2_est43",dia_total_dentro_nivel_2_est43)
+print("dia_total_dentro_nivel_3_est43",dia_total_dentro_nivel_3_est43)
+print("dia_total_dentro_nivel_4_est43",dia_total_dentro_nivel_4_est43)
+print("dia_total_dentro_nivel_5_est43",dia_total_dentro_nivel_5_est43)
+
+dia_total_dentro_nivel_1_est43_norma=dia_total_dentro_nivel_1_est43/numero_de_medias_est_43
+dia_total_dentro_nivel_2_est43_norma=dia_total_dentro_nivel_2_est43/numero_de_medias_est_43
+dia_total_dentro_nivel_3_est43_norma=dia_total_dentro_nivel_3_est43/numero_de_medias_est_43
+dia_total_dentro_nivel_4_est43_norma=dia_total_dentro_nivel_4_est43/numero_de_medias_est_43
+dia_total_dentro_nivel_5_est43_norma=dia_total_dentro_nivel_5_est43/numero_de_medias_est_43
+
+print("dia_total_dentro_nivel_1_est43_norma",dia_total_dentro_nivel_1_est43_norma)
+print("dia_total_dentro_nivel_2_est43_norma",dia_total_dentro_nivel_2_est43_norma)
+print("dia_total_dentro_nivel_3_est43_norma",dia_total_dentro_nivel_3_est43_norma)
+print("dia_total_dentro_nivel_4_est43_norma",dia_total_dentro_nivel_4_est43_norma)
+print("dia_total_dentro_nivel_5_est43_norma",dia_total_dentro_nivel_5_est43_norma)
+
+distribucion_dias_est43=[dia_total_dentro_nivel_1_est43, dia_total_dentro_nivel_2_est43,dia_total_dentro_nivel_3_est43,dia_total_dentro_nivel_4_est43,dia_total_dentro_nivel_5_est43]
+labels = 'Nivel 1', 'Nivel 2', 'Nivel 3', 'Nivel 4', 'Nivel 5'
+distribucion_dias_est43_norma=[dia_total_dentro_nivel_1_est43_norma,dia_total_dentro_nivel_2_est43_norma,dia_total_dentro_nivel_3_est43_norma,dia_total_dentro_nivel_4_est43_norma,dia_total_dentro_nivel_5_est43_norma]
+
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])   
+explode = (0, 0, 0, 0,0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+fig1, ax1 = plt.subplots()
+ax1.pie(distribucion_dias_est43, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+
+
+#EStacion 44
+numero_de_medias_est_44=len(mean_diarios_validos_est_44)
+print("numero_de_medias_est_44",numero_de_medias_est_44)
+print("mean_diarios_validos_est_44[0]",mean_diarios_validos_est_44[0])
+print("mean_diarios_validos_est_44[1]",mean_diarios_validos_est_44[1])
+dia_total_dentro_nivel_1_est44=0
+dia_total_dentro_nivel_2_est44=0
+dia_total_dentro_nivel_3_est44=0
+dia_total_dentro_nivel_4_est44=0
+dia_total_dentro_nivel_5_est44=0
+for k in range(0,numero_de_medias_est_44):
+
+    media_del_dia=mean_diarios_validos_est_44[k]
+
+    if media_del_dia <= 20:
+               dia_total_dentro_nivel_1_est44=dia_total_dentro_nivel_1_est44+1           
+    elif media_del_dia <= 35:
+               dia_total_dentro_nivel_2_est44=dia_total_dentro_nivel_2_est44+1                        
+    elif media_del_dia <= 50:
+               dia_total_dentro_nivel_3_est44=dia_total_dentro_nivel_3_est44+1   
+    elif media_del_dia <= 100:
+               dia_total_dentro_nivel_4_est44=dia_total_dentro_nivel_4_est44+1 
+    elif media_del_dia > 100:
+               dia_total_dentro_nivel_5_est44=dia_total_dentro_nivel_5_est44+1 
+
+print("dia_total_dentro_nivel_1_est44",dia_total_dentro_nivel_1_est44)
+print("dia_total_dentro_nivel_2_est44",dia_total_dentro_nivel_2_est44)
+print("dia_total_dentro_nivel_3_est44",dia_total_dentro_nivel_3_est44)
+print("dia_total_dentro_nivel_4_est44",dia_total_dentro_nivel_4_est44)
+print("dia_total_dentro_nivel_5_est44",dia_total_dentro_nivel_5_est44)
+
+dia_total_dentro_nivel_1_est44_norma=dia_total_dentro_nivel_1_est44/numero_de_medias_est_44
+dia_total_dentro_nivel_2_est44_norma=dia_total_dentro_nivel_2_est44/numero_de_medias_est_44
+dia_total_dentro_nivel_3_est44_norma=dia_total_dentro_nivel_3_est44/numero_de_medias_est_44
+dia_total_dentro_nivel_4_est44_norma=dia_total_dentro_nivel_4_est44/numero_de_medias_est_44
+dia_total_dentro_nivel_5_est44_norma=dia_total_dentro_nivel_5_est44/numero_de_medias_est_44
+
+print("dia_total_dentro_nivel_1_est44_norma",dia_total_dentro_nivel_1_est44_norma)
+print("dia_total_dentro_nivel_2_est44_norma",dia_total_dentro_nivel_2_est44_norma)
+print("dia_total_dentro_nivel_3_est44_norma",dia_total_dentro_nivel_3_est44_norma)
+print("dia_total_dentro_nivel_4_est44_norma",dia_total_dentro_nivel_4_est44_norma)
+print("dia_total_dentro_nivel_5_est44_norma",dia_total_dentro_nivel_5_est44_norma)
+
+distribucion_dias_est44=[dia_total_dentro_nivel_1_est44, dia_total_dentro_nivel_2_est44,dia_total_dentro_nivel_3_est44,dia_total_dentro_nivel_4_est44,dia_total_dentro_nivel_5_est44]
+labels = 'Nivel 1', 'Nivel 2', 'Nivel 3', 'Nivel 4', 'Nivel 5'
+distribucion_dias_est44_norma=[dia_total_dentro_nivel_1_est44_norma,dia_total_dentro_nivel_2_est44_norma,dia_total_dentro_nivel_3_est44_norma,dia_total_dentro_nivel_4_est44_norma,dia_total_dentro_nivel_5_est44_norma]
+
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])   
+explode = (0, 0, 0, 0,0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+fig1, ax1 = plt.subplots()
+ax1.pie(distribucion_dias_est44, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+
+#EStacion 54
+numero_de_medias_est_54=len(mean_diarios_validos_est_54)
+print("numero_de_medias_est_54",numero_de_medias_est_54)
+print("mean_diarios_validos_est_54[0]",mean_diarios_validos_est_54[0])
+print("mean_diarios_validos_est_54[1]",mean_diarios_validos_est_54[1])
+dia_total_dentro_nivel_1_est54=0
+dia_total_dentro_nivel_2_est54=0
+dia_total_dentro_nivel_3_est54=0
+dia_total_dentro_nivel_4_est54=0
+dia_total_dentro_nivel_5_est54=0
+for k in range(0,numero_de_medias_est_54):
+
+    media_del_dia=mean_diarios_validos_est_54[k]
+
+    if media_del_dia <= 20:
+               dia_total_dentro_nivel_1_est54=dia_total_dentro_nivel_1_est54+1           
+    elif media_del_dia <= 35:
+               dia_total_dentro_nivel_2_est54=dia_total_dentro_nivel_2_est54+1                        
+    elif media_del_dia <= 50:
+               dia_total_dentro_nivel_3_est54=dia_total_dentro_nivel_3_est54+1   
+    elif media_del_dia <= 100:
+               dia_total_dentro_nivel_4_est54=dia_total_dentro_nivel_4_est54+1 
+    elif media_del_dia > 100:
+               dia_total_dentro_nivel_5_est54=dia_total_dentro_nivel_5_est54+1 
+
+print("dia_total_dentro_nivel_1_est54",dia_total_dentro_nivel_1_est54)
+print("dia_total_dentro_nivel_2_est54",dia_total_dentro_nivel_2_est54)
+print("dia_total_dentro_nivel_3_est54",dia_total_dentro_nivel_3_est54)
+print("dia_total_dentro_nivel_4_est54",dia_total_dentro_nivel_4_est54)
+print("dia_total_dentro_nivel_5_est54",dia_total_dentro_nivel_5_est54)
+
+dia_total_dentro_nivel_1_est54_norma=dia_total_dentro_nivel_1_est54/numero_de_medias_est_54
+dia_total_dentro_nivel_2_est54_norma=dia_total_dentro_nivel_2_est54/numero_de_medias_est_54
+dia_total_dentro_nivel_3_est54_norma=dia_total_dentro_nivel_3_est54/numero_de_medias_est_54
+dia_total_dentro_nivel_4_est54_norma=dia_total_dentro_nivel_4_est54/numero_de_medias_est_54
+dia_total_dentro_nivel_5_est54_norma=dia_total_dentro_nivel_5_est54/numero_de_medias_est_54
+
+print("dia_total_dentro_nivel_1_est54_norma",dia_total_dentro_nivel_1_est54_norma)
+print("dia_total_dentro_nivel_2_est54_norma",dia_total_dentro_nivel_2_est54_norma)
+print("dia_total_dentro_nivel_3_est54_norma",dia_total_dentro_nivel_3_est54_norma)
+print("dia_total_dentro_nivel_4_est54_norma",dia_total_dentro_nivel_4_est54_norma)
+print("dia_total_dentro_nivel_5_est54_norma",dia_total_dentro_nivel_5_est54_norma)
+
+distribucion_dias_est54=[dia_total_dentro_nivel_1_est54, dia_total_dentro_nivel_2_est54,dia_total_dentro_nivel_3_est54,dia_total_dentro_nivel_4_est54,dia_total_dentro_nivel_5_est54]
+labels = 'Nivel 1', 'Nivel 2', 'Nivel 3', 'Nivel 4', 'Nivel 5'
+distribucion_dias_est54_norma=[dia_total_dentro_nivel_1_est54_norma,dia_total_dentro_nivel_2_est54_norma,dia_total_dentro_nivel_3_est54_norma,dia_total_dentro_nivel_4_est54_norma,dia_total_dentro_nivel_5_est54_norma]
+
+fig = plt.figure()
+ax = fig.add_axes([0,0,1,1])   
+explode = (0, 0, 0, 0,0)  # only "explode" the 2nd slice (i.e. 'Hogs')
+fig1, ax1 = plt.subplots()
+ax1.pie(distribucion_dias_est54, explode=explode, labels=labels, autopct='%1.1f%%',
+        shadow=True, startangle=90)
+
+#EStacion 57
+numero_de_medias_est_57=len(mean_diarios_validos_est_57)
+print("numero_de_medias_est_57",numero_de_medias_est_57)
+print("mean_diarios_validos_est_57[0]",mean_diarios_validos_est_57[0])
+print("mean_diarios_validos_est_57[1]",mean_diarios_validos_est_57[1])
+dia_total_dentro_nivel_1_est57=0
+dia_total_dentro_nivel_2_est57=0
+dia_total_dentro_nivel_3_est57=0
+dia_total_dentro_nivel_4_est57=0
+dia_total_dentro_nivel_5_est57=0
+for k in range(0,numero_de_medias_est_57):
+
+    media_del_dia=mean_diarios_validos_est_57[k]
+
+    if media_del_dia <= 20:
+               dia_total_dentro_nivel_1_est57=dia_total_dentro_nivel_1_est57+1           
+    elif media_del_dia <= 35:
+               dia_total_dentro_nivel_2_est57=dia_total_dentro_nivel_2_est57+1                        
+    elif media_del_dia <= 50:
+               dia_total_dentro_nivel_3_est57=dia_total_dentro_nivel_3_est57+1   
+    elif media_del_dia <= 100:
+               dia_total_dentro_nivel_4_est57=dia_total_dentro_nivel_4_est57+1 
+    elif media_del_dia > 100:
+               dia_total_dentro_nivel_5_est57=dia_total_dentro_nivel_5_est57+1 
+
+print("dia_total_dentro_nivel_1_est57",dia_total_dentro_nivel_1_est57)
+print("dia_total_dentro_nivel_2_est57",dia_total_dentro_nivel_2_est57)
+print("dia_total_dentro_nivel_3_est57",dia_total_dentro_nivel_3_est57)
+print("dia_total_dentro_nivel_4_est57",dia_total_dentro_nivel_4_est57)
+print("dia_total_dentro_nivel_5_est57",dia_total_dentro_nivel_5_est57)
+
+dia_total_dentro_nivel_1_est57_norma=dia_total_dentro_nivel_1_est57/numero_de_medias_est_57
+dia_total_dentro_nivel_2_est57_norma=dia_total_dentro_nivel_2_est57/numero_de_medias_est_57
+dia_total_dentro_nivel_3_est57_norma=dia_total_dentro_nivel_3_est57/numero_de_medias_est_57
+dia_total_dentro_nivel_4_est57_norma=dia_total_dentro_nivel_4_est57/numero_de_medias_est_57
+dia_total_dentro_nivel_5_est57_norma=dia_total_dentro_nivel_5_est57/numero_de_medias_est_57
+
+print("dia_total_dentro_nivel_1_est57_norma",dia_total_dentro_nivel_1_est57_norma)
+print("dia_total_dentro_nivel_2_est57_norma",dia_total_dentro_nivel_2_est57_norma)
+print("dia_total_dentro_nivel_3_est57_norma",dia_total_dentro_nivel_3_est57_norma)
+print("dia_total_dentro_nivel_4_est57_norma",dia_total_dentro_nivel_4_est57_norma)
+print("dia_total_dentro_nivel_5_est57_norma",dia_total_dentro_nivel_5_est57_norma)
+
+
+dias_por_nivel_est4=[dia_total_dentro_nivel_1_est4_norma,dia_total_dentro_nivel_2_est4_norma,
+                     dia_total_dentro_nivel_3_est4_norma,dia_total_dentro_nivel_4_est4_norma,
+                     dia_total_dentro_nivel_5_est4_norma]
+                     
+dias_por_nivel_est43=[dia_total_dentro_nivel_1_est43_norma,dia_total_dentro_nivel_2_est43_norma,
+                     dia_total_dentro_nivel_3_est43_norma,dia_total_dentro_nivel_4_est43_norma,
+                     dia_total_dentro_nivel_5_est43_norma]
+
+dias_por_nivel_est44=[dia_total_dentro_nivel_1_est44_norma,dia_total_dentro_nivel_2_est44_norma,
+                     dia_total_dentro_nivel_3_est44_norma,dia_total_dentro_nivel_4_est44_norma,
+                     dia_total_dentro_nivel_5_est44_norma]
+
+dias_por_nivel_est54=[dia_total_dentro_nivel_1_est54_norma,dia_total_dentro_nivel_2_est54_norma,
+                     dia_total_dentro_nivel_3_est54_norma,dia_total_dentro_nivel_4_est54_norma,
+                     dia_total_dentro_nivel_5_est54_norma]
+
+dias_por_nivel_est57=[dia_total_dentro_nivel_1_est57_norma,dia_total_dentro_nivel_2_est57_norma,
+                     dia_total_dentro_nivel_3_est57_norma,dia_total_dentro_nivel_4_est57_norma,
+                     dia_total_dentro_nivel_5_est57_norma]
+
+
+
+dias_por_nivel_est4_round=np.round(dias_por_nivel_est4,3)
+dias_por_nivel_est43_round=np.round(dias_por_nivel_est43,3)
+dias_por_nivel_est44_round=np.round(dias_por_nivel_est44,3)
+dias_por_nivel_est54_round=np.round(dias_por_nivel_est54,3)
+dias_por_nivel_est57_round=np.round(dias_por_nivel_est57,3)
+
+dias_por_nivel_est4_edit=np.array(dias_por_nivel_est4_round)*100
+dias_por_nivel_est43_edit=np.array(dias_por_nivel_est43_round)*100
+dias_por_nivel_est44_edit=np.array(dias_por_nivel_est44_round)*100
+dias_por_nivel_est54_edit=np.array(dias_por_nivel_est54_round)*100
+dias_por_nivel_est57_edit=np.array(dias_por_nivel_est57_round)*100
+
+dias_por_nivel_est4_porcen=np.round(dias_por_nivel_est4_edit)
+dias_por_nivel_est43_porcen=np.round(dias_por_nivel_est43_edit)
+dias_por_nivel_est44_porcen=np.round(dias_por_nivel_est44_edit)
+dias_por_nivel_est54_porcen=np.round(dias_por_nivel_est54_edit)
+dias_por_nivel_est57_porcen=np.round(dias_por_nivel_est57_edit)
+
+
+distribucion_dias_est57=[dia_total_dentro_nivel_1_est57, dia_total_dentro_nivel_2_est57,dia_total_dentro_nivel_3_est57,dia_total_dentro_nivel_4_est57,dia_total_dentro_nivel_5_est57]
+labels = 'Nivel 1', 'Nivel 2', 'Nivel 3', 'Nivel 4', 'Nivel 5'
+distribucion_dias_est57_norma=[dia_total_dentro_nivel_1_est57_norma,dia_total_dentro_nivel_2_est57_norma,dia_total_dentro_nivel_3_est57_norma,dia_total_dentro_nivel_4_est57_norma,dia_total_dentro_nivel_5_est57_norma]
+
+#NUevas graficas
+
+intervalo1 = (dia_total_dentro_nivel_1_est4_norma, dia_total_dentro_nivel_1_est43_norma, dia_total_dentro_nivel_1_est44_norma, dia_total_dentro_nivel_1_est54_norma, dia_total_dentro_nivel_1_est57_norma)
+intervalo2 = (dia_total_dentro_nivel_2_est4_norma, dia_total_dentro_nivel_2_est43_norma, dia_total_dentro_nivel_2_est44_norma, dia_total_dentro_nivel_2_est54_norma, dia_total_dentro_nivel_2_est57_norma)
+intervalo3 = (dia_total_dentro_nivel_3_est4_norma, dia_total_dentro_nivel_3_est43_norma, dia_total_dentro_nivel_3_est44_norma, dia_total_dentro_nivel_3_est54_norma, dia_total_dentro_nivel_3_est57_norma)
+intervalo4 = (dia_total_dentro_nivel_4_est4_norma, dia_total_dentro_nivel_4_est43_norma, dia_total_dentro_nivel_4_est44_norma, dia_total_dentro_nivel_4_est54_norma, dia_total_dentro_nivel_4_est57_norma)
+intervalo5 = (dia_total_dentro_nivel_5_est4_norma, dia_total_dentro_nivel_5_est43_norma, dia_total_dentro_nivel_5_est44_norma, dia_total_dentro_nivel_5_est54_norma, dia_total_dentro_nivel_5_est57_norma)
+print("intervalo1",intervalo1)
+print("intervalo2",intervalo2)
+print("intervalo3",intervalo3)
+print("intervalo4",intervalo4)
+print("intervalo5",intervalo5)
+
+
+intervalo1_porcentaje=np.array(intervalo1) * 100
+intervalo2_porcentaje=np.array(intervalo2) * 100
+intervalo3_porcentaje=np.array(intervalo3) * 100
+intervalo4_porcentaje=np.array(intervalo4) * 100
+intervalo5_porcentaje=np.array(intervalo5) * 100
+
+
+#Gráfico chido
+fig=plt.figure()
+
+#df4 = pd.DataFrame({'a': distribucion_dias_est4_norma, 'b': distribucion_dias_est43_norma,
+#                    'c': distribucion_dias_est44_norma, 'd': distribucion_dias_est54_norma,
+#                  'e': distribucion_dias_est57_norma}, columns=['a', 'b', 'c','d','e'])
+
+df4 = pd.DataFrame({'Molt bo': intervalo1_porcentaje, 'Bo': intervalo2_porcentaje,
+                    'Regular': intervalo3_porcentaje, 'Dolent': intervalo4_porcentaje,
+                  'Molt dolent': intervalo5_porcentaje}, columns=['Molt bo', 'Bo', 'Regular','Dolent','Molt dolent'],
+                   index=[u'Est 4', u'Est 43', u'Est 44', u'Est 54', u'Est 57'])
+
+print("df4",df4)
+ax=df4.plot.barh(stacked=True, edgecolor='none');
+horiz_offset = 1.03
+vert_offset = 1.
+ax.legend(bbox_to_anchor=(horiz_offset, vert_offset))
+
+#Fin de gráfico chido
+
+
+category_names = ['Molt bo', 'Bo',
+                  'Regular', 'Dolent', 'Molt dolent']
+results = {
+    'Est 4': dias_por_nivel_est4_porcen,
+    'Est 43': dias_por_nivel_est43_porcen,
+    'Est 44': dias_por_nivel_est44_porcen,
+    'Est 54': dias_por_nivel_est54_porcen,
+    'Est 57': dias_por_nivel_est57_porcen
+}
+
+
+def survey(results, category_names):
+ 
+    labels = list(results.keys())
+    data = np.array(list(results.values()))
+    data_cum = data.cumsum(axis=1,dtype=float)
+    category_colors = plt.get_cmap('RdYlGn_r')(
+        np.linspace(0.15, 0.85, data.shape[1]))
+
+    fig, ax = plt.subplots(figsize=(9.2, 5))
+    ax.invert_yaxis()
+    ax.xaxis.set_visible(False)
+    ax.set_xlim(0, np.sum(data, axis=1).max())
+
+    for i, (colname, color) in enumerate(zip(category_names, category_colors)):
+        widths = data[:, i]
+        starts = data_cum[:, i] - widths
+        ax.barh(labels, widths, left=starts, height=0.5,
+                label=colname, color=color)
+        xcenters = starts + widths / 2
+
+        r, g, b, _ = color
+        text_color = 'white' if r * g * b < 0.5 else 'darkgrey'
+        for y, (x, c) in enumerate(zip(xcenters, widths)):
+            if c > 0:
+                 ax.text(x, y, str(int(c)), ha='center', va='center',
+                    color=text_color)
+    ax.legend(ncol=len(category_names), bbox_to_anchor=(0, 1),
+              loc='lower left', fontsize='small')
+
+    return fig, ax
+
+
+survey(results, category_names)
+plt.show()
+
+
+----
+
+
++*Out[1]:*+
+----
+[cols=",,,,,,,,,,,,,,,,,,,,,",options="header",]
+|===
+| |CODI_PROVINCIA |PROVINCIA |CODI_MUNICIPI |MUNICIPI |ESTACIO
+|CODI_CONTAMINANT |ANY |MES |DIA |H01 |... |H20 |V20 |H21 |V21 |H22 |V22
+|H23 |V23 |H24 |V24
+|0 |8 |Barcelona |19 |Barcelona |4 |7 |2019 |5 |1 |2.0 |... |5.0 |V |4.0
+|V |1.0 |V |1.0 |V |2.0 |V
+
+|1 |8 |Barcelona |19 |Barcelona |4 |7 |2019 |5 |2 |2.0 |... |3.0 |V |1.0
+|V |1.0 |V |1.0 |V |1.0 |V
+
+|2 |8 |Barcelona |19 |Barcelona |4 |7 |2019 |5 |3 |1.0 |... |6.0 |V |7.0
+|V |5.0 |V |8.0 |V |5.0 |V
+
+|3 |8 |Barcelona |19 |Barcelona |4 |7 |2019 |5 |4 |2.0 |... |4.0 |V |4.0
+|V |4.0 |V |2.0 |V |3.0 |V
+
+|4 |8 |Barcelona |19 |Barcelona |4 |7 |2019 |5 |5 |3.0 |... |2.0 |V |3.0
+|V |1.0 |V |1.0 |V |1.0 |V
+|===
+
+5 rows × 57 columns
+----
+
+
++*In[ ]:*+
+[source, ipython3]
+----
+
+----
